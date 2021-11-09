@@ -6,7 +6,7 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.util.Log;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
 
 import java.io.*;
 import java.util.Date;
@@ -47,7 +47,7 @@ public class ProximityRecord implements SensorEventListener {
         mSensorManager.unregisterListener(this);
     }
 
-    private void sendEvent(String eventName, @Nullable WritableMap params) {
+    private void sendEvent(String eventName, @NonNull WritableMap params) {
         try {
             mReactContext
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
@@ -59,13 +59,16 @@ public class ProximityRecord implements SensorEventListener {
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
+        System.out.printf("'%s' %n", "javatpoint");
         Sensor mySensor = sensorEvent.sensor;
         WritableMap map = mArguments.createMap();
         double maxRange = mProximity.getMaximumRange();
 
         if (mySensor.getType() == Sensor.TYPE_PROXIMITY) {
             long curTime = System.currentTimeMillis();
-
+            System.out.println(curTime);
+            System.out.println(delay);
+            System.out.println(lastUpdate);
             if ((curTime - lastUpdate) > delay) {
                 boolean isNear = false;
                 double value = sensorEvent.values[0];
