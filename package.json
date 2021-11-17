@@ -1,5 +1,5 @@
 {
-  "name": "3po-react-native-sensor-manager",
+  "name": "react-native-sensor-manager",
   "version": "0.1.1",
   "description": "A react-native module that allows you to use the accelerometer, gyroscope and magnetometer and Android devices\"",
   "main": "index.js",
@@ -13,14 +13,14 @@
   "keywords": [
     "react-native",
     "android",
-    "3po-react-native-sensor-manager",
+    "react-native-sensor-manager",
     "accelerometer",
     "gyroscope",
     "magnetometer",
     "thermometer",
     "step-counter"
   ],
-  "author": "Kevin Primicerio <kevin.primicerio@gmail.com>",
+  "author": "3PO Solutions <3po.solutions.inc@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/3posol/react-native-sensor-manager/issues"
